@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AcercaDeActivity"
+            android:label="@string/title_activity_acerca_de" >
+        </activity>
+        <activity
+            android:name=".Intercambio1"
+            android:label="@string/title_activity_intercambio1" >
+        </activity>
+        <activity
+            android:name=".Intercambio2"
+            android:label="@string/title_activity_intercambio2" >
+        </activity>
+        <activity
+            android:name=".Preferencias"
+            android:label="@string/title_activity_intercambio2" >
+        </activity>
     </application>
 
 </manifest>

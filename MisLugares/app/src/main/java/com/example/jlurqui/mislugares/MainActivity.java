@@ -1,19 +1,30 @@
 package com.example.jlurqui.mislugares;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    public BaseAdapter adaptador;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        adaptador = new ArrayAdapter(this,
+                android.R.layout.simple_list_item_1,
+                Lugares.listaNombres());
+        ListView listView = (ListView) findViewById(R.id.lviLugares);
+        listView.setAdapter(adaptador);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -31,9 +42,30 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            lanzarPreferencias(null);
+            return true;
+        } else if (id == R.id.action_about) {
+            lanzarAcercaDe(null);
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        //return super.onOptionsItemSelected(item);
+        return true; /** true -> consumimos el item, no se propaga*/
     }
+
+    public void lanzarIntercambio(View vVista) {
+        Intent lIntento = new Intent(this, Intercambio1.class);
+        startActivity(lIntento);
+    }
+
+    public void lanzarAcercaDe(View vVista) {
+        Intent lIntento = new Intent(this, AcercaDeActivity.class);
+        startActivity(lIntento);
+    }
+
+    public void lanzarPreferencias(View vVista) {
+        Intent lIntento = new Intent(this, Preferencias.class);
+        startActivity(lIntento);
+    }
+
 }
