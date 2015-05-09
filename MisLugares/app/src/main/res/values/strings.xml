@@ -19,5 +19,8 @@
     <string name="title_activity_intercambio2">Intercambio2</string>
     <string name="mmenu_Intercambio">Intercambio</string>
     <string name="strCancelar">Cancelar</string>
+    <string name="title_activity_vista_lugares">VistaLugares</string>
+
+    <string name="hello_world">¡Hola mundo!</string>
 
 </resources>

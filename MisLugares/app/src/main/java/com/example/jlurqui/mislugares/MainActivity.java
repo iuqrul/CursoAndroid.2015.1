@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
 
     public BaseAdapter adaptador;
 
@@ -19,11 +19,16 @@ public class MainActivity extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        adaptador = new AdaptadorLugares(this);
+        /*
         adaptador = new ArrayAdapter(this,
-                android.R.layout.simple_list_item_1,
+                R.layout.elemento_lista,
+                R.id.nombre,
                 Lugares.listaNombres());
+                */
         ListView listView = (ListView) findViewById(R.id.lviLugares);
         listView.setAdapter(adaptador);
+        listView.setOnItemClickListener(this);
     }
 
     @Override
@@ -68,4 +73,11 @@ public class MainActivity extends ActionBarActivity {
         startActivity(lIntento);
     }
 
+    @Override
+    public void onItemClick(AdapterView parent,View vista,
+                               int posicion, long id){
+        Intent i = new Intent(this, VistaLugar.class);
+        i.putExtra("id", id);
+        startActivity(i);
+    }
 }

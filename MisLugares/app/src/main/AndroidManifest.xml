@@ -32,6 +32,10 @@
             android:name=".Preferencias"
             android:label="@string/title_activity_intercambio2" >
         </activity>
+        <activity
+            android:name=".VistaLugar"
+            android:label="@string/title_activity_vista_lugares" >
+        </activity>
     </application>
 
 </manifest>
