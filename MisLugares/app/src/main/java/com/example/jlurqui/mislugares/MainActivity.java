@@ -69,7 +69,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     }
 
     public void lanzarPreferencias(View vVista) {
-        Intent lIntento = new Intent(this, Preferencias.class);
+        Intent lIntento = new Intent(this, Preferenciass.class);
         startActivity(lIntento);
     }
 
