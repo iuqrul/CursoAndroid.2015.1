@@ -47,7 +47,7 @@ public class Intercambio1 extends ActionBarActivity {
     public void lanzarIntercambio2(View vVista) {
         Intent lIntento = new Intent(this, Intercambio2.class);
 //        lIntento.putExtra("nombre", (edtNombre.getText()));
-        lIntento.setType()
+        //lIntento.setType()
         lIntento.putExtra("nombre", edtNombre.getText().toString());
         startActivityForResult(lIntento, 1234);
     }
